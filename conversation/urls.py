@@ -1,12 +1,8 @@
-from rest_framework.routers import Route, SimpleRouter
 
-class CustomRouter(SimpleRouter):
-    routes = [
-        Route(
-            url=r'^{prefix}$',
-            mapping={'get': 'list'},
-            name='{basename}-list',
-            detail=True,
-            initkwargs={'suffix': 'Detail'}
-        )
-    ]
+
+from django.urls import path
+from conversation import views
+
+urlpatterns = [
+    path('sentence/', views.sentence_list),
+]

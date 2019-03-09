@@ -14,14 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from conversation.urls import CustomRouter
-from conversation.views import SentenceViewSet
+from django.urls import include, path
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('conversation.urls')),
 ]
-
-router = CustomRouter()
-router.register('sentences', SentenceViewSet, basename="sentences")
-
-urlpatterns += router.urls

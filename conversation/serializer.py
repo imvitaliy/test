@@ -5,15 +5,17 @@ from .models import Sentence
 class SentenceSerializer(serializers.Serializer):
     title = serializers.CharField()
     sentence = serializers.CharField()
-    created_at = serializers.DateTimeField()
-    modified_at = serializers.DateTimeField()
 
     class Meta(object):
         """Meta options."""
         model = Sentence
         fields = (
             'title',
-            'sentence',
-            'created_at',
-            'modified_at',
+            'sentence'
         )
+
+    def create(self, validated_data):
+        """
+        Create and return a new `Snippet` instance, given the validated data.
+        """
+        return Sentence.objects.create(**validated_data)
