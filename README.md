@@ -38,5 +38,5 @@ curl -X GET http://127.0.0.1:8080/
 curl -X GET http://127.0.0.1:8080/Paquito
 ```
 
-![Alt Text](https://giphy.com/gifs/claire-danes-pqkBgz8JkfGrC)
+![Alt Text](https://media.giphy.com/media/pqkBgz8JkfGrC/giphy.gif)
 
